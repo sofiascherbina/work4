@@ -68,6 +68,8 @@ let picList = document.querySelector('.js-gallery');
 let lightBox = document.querySelector('.js-lightbox');
 let fullImage= document.querySelector('.lightbox__image');
 let closeBtn= document.querySelector('.lightbox__button');
+let imgIndex = 0;
+let linkList = galleryItems.map(el => el.original);
 
 galleryItems.forEach(it =>{
     let li = document.createElement('li');
@@ -89,11 +91,17 @@ galleryItems.forEach(it =>{
 });
 
 picList.addEventListener('click', (event) =>{
+   if(event.target.nodeName !== 'IMG'){
+        return;
+    }
     event.preventDefault();
     lightBox.classList.add('is-open');
 
-    fullImage.src = event.target.dataset.source;
     fullImage.alt = event.target.alt;
+    let fullImageSrc = event.target.dataset.source;
+
+    imgIndex = linkList.indexOf(fullImageSrc);
+    fullImage.src = fullImageSrc;
 
 });
 
@@ -106,12 +114,12 @@ document.addEventListener('keydown', (event) =>{
     if(event.key === 'Escape'){
         closeLightbox();
     }
-    //  else if (event.key === 'ArrowRight'){
-    //    imgIndex++;
-    //   openLightbox(imgIndex);
-    // }
-    //   else if (event.key === 'ArrowRight'){
-    //    imgIndex--;
-    //   openLightbox(imgIndex);
-    // }
+     else if (event.key === 'ArrowRight' && imgIndex < linkList.length - 1){
+       imgIndex++;
+      fullImage.src = linkList[imgIndex];
+    }
+      else if (event.key === 'ArrowLeft' && imgIndex > 0){
+       imgIndex--;
+      fullImage.src = linkList[imgIndex];
+    }
 });
