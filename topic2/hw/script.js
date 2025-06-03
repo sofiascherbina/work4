@@ -63,63 +63,35 @@ const galleryItems = [
     description: 'Lighthouse Coast Sea',
   },
 ];
+let img = document.querySelector('.slider__image');
+let input = document.querySelector('.slider__input');
+let linkList = galleryItems.map(el => el.preview);
 
-let picList = document.querySelector('.js-gallery');
-let lightBox = document.querySelector('.js-lightbox');
-let fullImage= document.querySelector('.lightbox__image');
-let closeBtn= document.querySelector('.lightbox__button');
-let imgIndex = 0;
-let linkList = galleryItems.map(el => el.original);
-
-galleryItems.forEach(it =>{
-    let li = document.createElement('li');
-    li.classList.add('gallery__item');
-        li.innerHTML = `
-        <a
-          class="gallery__link"
-          href="${it.original}"
-        >
-          <img
-            class="gallery__image"
-            src="${it.preview}"
-            data-source="${it.original}"
-            alt="${it.description}"
-          />
-        </a>`
-      picList.append(li);
-
-});
-
-picList.addEventListener('click', (event) =>{
-   if(event.target.nodeName !== 'IMG'){
-        return;
-    }
-    event.preventDefault();
-    lightBox.classList.add('is-open');
-
-    fullImage.alt = event.target.alt;
-    let fullImageSrc = event.target.dataset.source;
-
-    imgIndex = linkList.indexOf(fullImageSrc);
-    fullImage.src = fullImageSrc;
-
-});
-
-function closeLightbox(){
-    lightBox.classList.remove('is-open');
-    fullImage.src = '';
+function showImg(){
+    let index = Math.floor((input.value / 100) * linkList.length);
+    img.src = linkList[index];
 }
-closeBtn.addEventListener('click', closeLightbox);
-document.addEventListener('keydown', (event) =>{
-    if(event.key === 'Escape'){
-        closeLightbox();
-    }
-     else if (event.key === 'ArrowRight' && imgIndex < linkList.length - 1){
-       imgIndex++;
-      fullImage.src = linkList[imgIndex];
-    }
-      else if (event.key === 'ArrowLeft' && imgIndex > 0){
-       imgIndex--;
-      fullImage.src = linkList[imgIndex];
-    }
+function changeSize(){
+    let size = parseInt(input.value*10);
+    console.log(size);
+    
+    img.style.width =  size + 'px';
+    // img.style.height = input.value  + 'px';
+}
+let debounce = _.debounce(changeSize, 1000);
+input.addEventListener('input', ()=>{
+    showImg();
+    debounce();
 });
+
+
+// let box = document.querySelector('#box');
+//  function boxMove(event){
+//     let mouseX = event.clientX;
+//     let mouseY = event.clientY;
+
+//     box.style.left = `${mouseX}px`;
+//     box.style.top = `${mouseY}px`;
+//  };
+
+//  document.addEventListener('mousemove', _.debounce(boxMove, 100));

@@ -1,0 +1,64 @@
+/* div{
+    border: 1px solid purple;
+    width: 500px;
+}
+.parent{
+    background-color: aqua;
+    padding-bottom: 10px;
+}
+.child{
+    background-color: violet;
+    padding-bottom: 10px;
+}
+.descendant{
+    background-color: coral;
+    padding-bottom: 10px;
+} */
+/* 
+.color-palette .item {
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 250ms ease-in-out;
+  display: grid;
+  gap: 10px;
+}
+.color-palette .item:hover {
+  transform: scale(1.1);
+} */
+/* div{
+    border: 1px solid purple;
+    width: 500px;
+}
+.parent{
+    background-color: aqua;
+    padding-bottom: 10px;
+}
+.child{
+    background-color: violet;
+    padding-bottom: 10px;
+}
+.descendant{
+    background-color: coral;
+    padding-bottom: 10px;
+} */
+
+.color-palette .item {
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 250ms ease-in-out;
+  display: grid;
+  gap: 10px;
+}
+.color-palette .item:hover {
+  transform: scale(1.1);
+}
