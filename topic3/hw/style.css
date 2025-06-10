@@ -1,0 +1,35 @@
+.img-list{
+     margin: 1000px 500px;
+     list-style-type: none;
+}
+img { 
+    min-height: 500px;
+    min-width: 500px;
+    border-radius: 20px;
+    background-color: #87f3b7;
+    margin: 20px auto;
+    border: 10px solid #92ed8f;
+}
+
+.show-btn{
+    width: 500px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: #87f3b7;
+    border: 10px solid #92ed8f;
+    color: aliceblue;
+}
+.animated{
+    animation : picAppear 1s ease-in-out forwards;
+}
+@keyframes picAppear{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
