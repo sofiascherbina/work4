@@ -1,0 +1,33 @@
+.game-container{
+    width: 500px;
+    height: 300px;
+    margin: 200px auto 0;
+    border: none;
+    border-radius: 25px;
+    background-image: url(./img/shoko.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#key{
+    color: hotpink;
+    text-align: center;
+    font-size: 150px;
+}
+.new-game-btn{
+    width: 200px;
+    height: 50px;
+    margin: 15px 750px;
+    border: 5px dotted palevioletred;
+    border-radius: 25px;
+    background-color: darksalmon;
+    color: white;
+}
+.loading{
+    animation: loading 4.5s steps(1);
+};
+@keyframes loading{
+    /* 0%{background-image: url(./img/shoko.gif);} */
+    0%{background-image: url(./img/citlali.gif);}
+    100%{background-image: url(./img/shoko.gif);}
+}

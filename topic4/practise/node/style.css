@@ -1,0 +1,13 @@
+ /* .alert .pnotify-container{
+        background-color: cornflowerblue;
+        border-radius: 25px;
+    } */
+
+    li {
+    margin-bottom: 10px;
+  }
+ 
+ 
+  .done {
+    text-decoration: line-through;
+  }

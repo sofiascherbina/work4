@@ -1,0 +1,13 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+ 
+  .gallery a {
+    margin: 10px;
+  }
+ 
+  .gallery img {
+    max-width: 200px;
+  }
