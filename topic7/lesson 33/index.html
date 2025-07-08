@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Countries</title>
+        <style>
+            p {
+                margin: 5px;
+            }
+            .hero-card {
+                background-color: #aadfcb;
+                border-radius: 10px;
+                width: 295px;
+                height: min-content;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+            }
+            .hero-list {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                list-style-type: none;
+            }
+        </style>
+    </head>
+    <body>
+        <script id="hero-template" type="text/x-handlebars-template">
+            <ul class="hero-list">
+            {{#each this}}
+                <li class="hero-card ">
+                    <img src="{{img}}" alt="{{hero}} picture">
+                    <p>Hero: {{hero}}</p>
+                    <p>Weapon: {{weapon}}</p>
+                    <p>Skills: {{skills}}</p>
+                </li>
+            {{/each}}
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+        <script src="js/main.js" type="module"></script>
+    </body>
+</html>

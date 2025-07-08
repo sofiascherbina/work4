@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template class="menu-template">
+       <ul class="products-list" style="display: flex; gap: 30px;">
+            {{#each this}}
+            <li class="products-list_li">
+                <ul>
+                    <li><p>id : {{id}}</p></li>
+                    <li><p>name : {{name}}</p></li>
+                    <li><p>price : {{price}}</p></li>
+                    <li><p>description : {{description}}</p></li>
+                </ul>
+            </li>
+            {{/each}}
+        </ul>
+    </template>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="./index.js" type="module"></script>
+</body>
+</html>

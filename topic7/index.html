@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- <template class="menu-template">
+        <h1>{{title}}</h1>
+        <p>{{text}}</p>
+        <ul>
+            {{#each items}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </template> -->
+
+    <template class="menu-template">
+        <ul class="countries-list">
+            {{#each this}}
+            <li class="countries-list_li">
+                <img src="{{flag}}" width="500">
+                <ul class="countries-list_info">
+                    <li><p>Name : {{name}}</p></li>
+                    <li><p>Capital : {{capital}}</p></li>
+                    <li><p>Currency : {{currency}}</p></li>
+                    <li><p>Language : {{language}}</p></li>
+                    <li><p>Population : {{population}}</p></li>
+                    <li><p>Infected : {{infected}}</p></li>
+                </ul>
+            </li>
+            {{/each}}
+        </ul>
+    </template>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="./script.js" type="module"></script>
+     <!-- <script src="./index.html" type="module"></script> -->
+</body>
+</html>
