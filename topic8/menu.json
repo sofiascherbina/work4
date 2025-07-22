@@ -1,0 +1,20 @@
+[
+{
+    "title" : "Lemon Herb Grilled Salmon", 
+    "price": "$17.95",
+    "description":"tasty", 
+    "ingredients":["Salmon filletLemon juice Olive oil Garlic Rosemary, thyme, dill Salt, black pepper Broccoli, carrots Potatoes, butter, cream"]
+},
+{
+    "title" : "Truffle Mushroom Pasta", 
+    "price": " $14.50", 
+    "description":"tasty", 
+    "ingredients":["Fettuccine Cream Parmesan cheese Truffle oil Garlic"]
+},
+{
+    "title" : "Spicy Chicken Tacos", 
+    "price": "$12.25",
+    "description":"tasty", 
+    "ingredients":["Chicken breast Paprika, cayenne, cumin, Flour tortillas, Avocado, Tomato, red onion, cilantro, lime (for pico)"]
+}
+]

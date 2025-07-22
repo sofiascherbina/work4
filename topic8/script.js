@@ -53,4 +53,78 @@
 
 //second part
 
+// const fs = require('fs');
+// const obj  = `[
+// {
+//     "title" : "Lemon Herb Grilled Salmon", 
+//     "price": "$17.95",
+//     "description":"tasty", 
+//     "ingredients":["Salmon filletLemon juice Olive oil Garlic Rosemary, thyme, dill Salt, black pepper Broccoli, carrots Potatoes, butter, cream"]
+// },
+// {
+//     "title" : "Truffle Mushroom Pasta", 
+//     "price": " $14.50", 
+//     "description":"tasty", 
+//     "ingredients":["Fettuccine Cream Parmesan cheese Truffle oil Garlic"]
+// },
+// {
+//     "title" : "Spicy Chicken Tacos", 
+//     "price": "$12.25",
+//     "description":"tasty", 
+//     "ingredients":["Chicken breast Paprika, cayenne, cumin, Flour tortillas, Avocado, Tomato, red onion, cilantro, lime (for pico)"]
+// }
+// ]`;
+// const menu = JSON.parse(obj);
+// console.log(menu);
 
+// try{
+//     const shos = JSON.parse(obj);
+//     console.log('correct');
+    
+// }
+// catch(error){
+//     console.error('kapec', error.message);
+// }
+// let menu = JSON.stringify(obj)
+// fs.writeFile('menu.json', obj, (error)=>{
+//     if(error){
+//         console.log('kapec');
+//     }
+//     else{
+//         console.log('cool');
+//     }
+// })
+
+// const fs = require('fs');
+const students = `[
+{
+    "name" : "veronika",
+    "surname" : "lubimaya",
+    "marks" : ["12", "10", "11", "12"]
+},
+{
+    "name" : "sofia",
+    "surname" : "yakas",
+    "marks" : ["10", "10", "11", "10"]
+}
+]`
+try{
+    const obj = JSON.parse(students);
+    console.log('students');
+    console.log(obj );
+    
+}
+catch(error){
+    console.error('kapec', error.message);
+}
+
+
+// let list = JSON.stringify(students)
+// fs.writeFile('students.json', students, (error)=>{
+//     if(error){
+//         console.log('kapec');
+//     }
+//     else{
+//         console.log('students are cool');
+//     }
+// })

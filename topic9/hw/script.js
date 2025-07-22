@@ -1,45 +1,50 @@
-// let input = document.querySelector('#bookmarkInput');
-// let addBtn= document.querySelector('#addBookmarkBtn');
-// let list = document.querySelector('#bookmarkList');
-// let deleteBtn = document.querySelector('.detele');
-// const obj = {
-//     url : input.value
-// }
-// addBtn.addEventListener('click', ()=>{
-//     const obj = {
-//         url : input.value
-//     }
-    
-//      let li = document.createElement('li');
-//         li.innerHTML = `<a href ="#">${input.value}</a><button class ="delete">X</button>`
-//         list.append(li); 
-//         localStorage.setItem('obj', JSON.stringify(obj))
-//         li.value = '';
-// });
-//  list.addEventListener('click', (event)=>{
-//     if(event.target.classList.contains('delete')){
-//          event.target.closest('li').remove();
-//          localStorage.removeItem('obj')
-//     }
-// })
-
-
-let userName = document.querySelector('#username');
-let password = document.querySelector('#password');
-let btn = document.querySelector('#saveBtn');
-
-btn.addEventListener('click', ()=>{
-    const obj ={
-        userName : userName.value,
-        password : password.value
+const inputs = document.querySelectorAll('#form input')
+const userName = document.querySelector('#name');
+const userEmail = document.querySelector('#email');
+const userSurname = document.querySelector('#surname');
+const userNumber = document.querySelector('#number');
+const addBtn= document.querySelector('#add-btn');
+const deleteBtn= document.querySelector('.delete-btn');
+const list = document.querySelector('#contacts-list');
+let id = 0;
+addBtn.addEventListener('click', (event)=>{
+    event.preventDefault();
+    const contact = {
+        name : userName.value,
+        surname : userSurname.value,
+        number : userNumber.value,
+        email : userEmail.value
     }
-    localStorage.setItem('obj', JSON.stringify(obj))
+    id++; 
+    localStorage.setItem(`contact-${id}`, JSON.stringify(contact));
+
+      let li = document.createElement('li');
+      li.dataset.id = id;
+        li.innerHTML = `<ul>
+            <li><p>name : ${userName.value}</p></li>
+            <li><p>surname : ${userSurname.value}</p></li>
+            <li><p>number : ${userNumber.value}</p></li>
+            <li><p>email : ${userEmail.value}</p></li>
+        </ul>
+        <button class="delete-btn">delete</button>`
+          
+        list.append(li); 
+
+        inputs.forEach(item=>{
+            setTimeout(()=>{
+                item.value= '';
+            }, 500)
+        })
+list.addEventListener('click', (event)=>{
+    if(event.target.classList.contains('delete-btn')){
+        const li = event.target.closest('li');
+        id = li.dataset.id;
+        localStorage.removeItem(`contact-${id}`);
+        li.remove();
+        id--;
+    }
 });
-function getInformation (){
-    let data = localStorage.getItem('obj');
-    let info = JSON.parse(data);
-    userName.value = info.userName;
-    password.value = info.password;
-}
- getInformation ();
-//  localStorage.clear();
+         
+});
+
+// localStorage.clear();
