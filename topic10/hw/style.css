@@ -1,0 +1,12 @@
+.box-list{
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+.dissapeared{
+    display: none;
+}
+#score{
+    text-align: center;
+    padding-top: 30px;
+}
