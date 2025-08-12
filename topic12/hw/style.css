@@ -1,0 +1,33 @@
+#timer-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 20px 0;
+}
+
+.field {
+  background-color: #222;
+  color: #eee;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 60px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  perspective: 1000px;
+}
+
+.value {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.label {
+  display: block;
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-top: 4px;
+}
