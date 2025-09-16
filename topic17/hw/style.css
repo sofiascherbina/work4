@@ -1,0 +1,26 @@
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    padding: 0;
+}
+.list li{
+    width: calc(100% /4);
+    list-style-type: none;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+.list li:hover{
+    transform: scale(1.05);
+}
+.list li img{
+    border-radius: 25px;
+}
+.btn{
+    width: 200px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 15px;
+    background-color: darkslateblue;
+    color: antiquewhite;
+}

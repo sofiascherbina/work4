@@ -78,19 +78,19 @@
 
 
 
-let text = document.querySelector('.text');
-let usedLogins = [];
+// let text = document.querySelector('.text');
+// let usedLogins = [];
 
-function sentLogin (event){
-   let usedLogin = event.target.value;
-   if(usedLogins.includes(usedLogin)){
-      alert('Логін зайнятий')
-   }
-   else if( event.target.value.length > 0 ){
-      console.log(usedLogin);
-      usedLogins.push(usedLogin);
-   }
-}
+// function sentLogin (event){
+//    let usedLogin = event.target.value;
+//    if(usedLogins.includes(usedLogin)){
+//       alert('Логін зайнятий')
+//    }
+//    else if( event.target.value.length > 0 ){
+//       console.log(usedLogin);
+//       usedLogins.push(usedLogin);
+//    }
+// }
 
-let debounce = _.debounce(sentLogin, 1000);
-text.addEventListener('input', debounce );
+// let debounce = _.debounce(sentLogin, 1000);
+// text.addEventListener('input', debounce );
