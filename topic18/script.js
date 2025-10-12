@@ -174,82 +174,82 @@
 
 
 
-let btn = document.querySelector('.add');
-async function asyncFunGet(){
-    const response = await fetch('http://localhost:3001/students/')
-    return await response.json();
-} 
-console.log(asyncFunGet());
+// let btn = document.querySelector('.add');
+// async function asyncFunGet(){
+//     const response = await fetch('http://localhost:3001/students/')
+//     return await response.json();
+// } 
+// console.log(asyncFunGet());
 
-let studentId = Math.floor(Math.random() * 5) + 1;
-async function asyncFunGetId() {
-    const response = await fetch(`http://localhost:3001/students/${studentId}`)
-    return await response.json();
-}
-console.log(asyncFunGetId());
+// let studentId = Math.floor(Math.random() * 5) + 1;
+// async function asyncFunGetId() {
+//     const response = await fetch(`http://localhost:3001/students/${studentId}`)
+//     return await response.json();
+// }
+// console.log(asyncFunGetId());
 
-let newStudent = {
-    id: studentId ,
-    name: "Jane Doe",
-    age: 20,
-    email: "jane.doe@example.com",
-    phone: "900-6090"
-}
-const options = {
-    method:'POST',
-    body: JSON.stringify(newStudent),
-    headers:{ "Content-Type":"application/json;charset=UTF-8"}
-};
-async function asyncFunPost() {
-    const response = await fetch(`http://localhost:3001/students/`, options)
-    return await response.json();
-}
-btn.addEventListener('click',()=>{
-   console.log(asyncFunPost());
-});
+// let newStudent = {
+//     id: studentId ,
+//     name: "Jane Doe",
+//     age: 20,
+//     email: "jane.doe@example.com",
+//     phone: "900-6090"
+// }
+// const options = {
+//     method:'POST',
+//     body: JSON.stringify(newStudent),
+//     headers:{ "Content-Type":"application/json;charset=UTF-8"}
+// };
+// async function asyncFunPost() {
+//     const response = await fetch(`http://localhost:3001/students/`, options)
+//     return await response.json();
+// }
+// btn.addEventListener('click',()=>{
+//    console.log(asyncFunPost());
+// });
 
-let updatedStident = {
-    id: '5',
-    name: "Miku",
-    age: 25,
-    email: "miku.doe@example.com",
-    phone: "888-1234"
-}
+// let updatedStident = {
+//     id: '5',
+//     name: "Miku",
+//     age: 25,
+//     email: "miku.doe@example.com",
+//     phone: "888-1234"
+// }
 
-const optionsPUT = {
-    method:'PUT',
-    body: JSON.stringify(updatedStident),
-    headers:{ "Content-Type":"application/json;charset=UTF-8"}
-};
-async function asyncFunPut() {
-    const response = await fetch(`http://localhost:3001/students/${1}`, optionsPUT)
-    return await response.json();
-}
-console.log(asyncFunPut());
+// const optionsPUT = {
+//     method:'PUT',
+//     body: JSON.stringify(updatedStident),
+//     headers:{ "Content-Type":"application/json;charset=UTF-8"}
+// };
+// async function asyncFunPut() {
+//     const response = await fetch(`http://localhost:3001/students/${1}`, optionsPUT)
+//     return await response.json();
+// }
+// console.log(asyncFunPut());
 
-newStudent.age = 17;
-const optionsPATCH = {
-    method:'PATCH',
-    body: JSON.stringify(newStudent),
-    headers:{ "Content-Type":"application/json;charset=UTF-8"}
-};
-async function asyncFunPatch() {
-    const response = await fetch(`http://localhost:3001/students/${studentId}`, optionsPATCH)
-    return await response.json();
-}
-console.log(asyncFunPatch());
+// newStudent.age = 17;
+// const optionsPATCH = {
+//     method:'PATCH',
+//     body: JSON.stringify(newStudent),
+//     headers:{ "Content-Type":"application/json;charset=UTF-8"}
+// };
+// async function asyncFunPatch() {
+//     const response = await fetch(`http://localhost:3001/students/${studentId}`, optionsPATCH)
+//     return await response.json();
+// }
+// console.log(asyncFunPatch());
 
-let btnDel = document.querySelector('.del');
-const optionsDELETE = {
-    method:'DELETE',
-};
+// let btnDel = document.querySelector('.del');
+// const optionsDELETE = {
+//     method:'DELETE',
+// };
 
-btnDel.addEventListener('click',()=>{
-    async function asyncFunDel() {
-    const response = await fetch(`http://localhost:3001/students/${studentId}`, optionsDELETE)
-    return await response.json();
-}
-     asyncFunDel();
-   console.log(asyncFunGet());
+// btnDel.addEventListener('click',()=>{
+//     async function asyncFunDel() {
+//     const response = await fetch(`http://localhost:3001/students/${studentId}`, optionsDELETE)
+//     return await response.json();
+// }
+//      asyncFunDel();
+//    console.log(asyncFunGet());
    
-});
+// });
