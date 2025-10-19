@@ -91,3 +91,29 @@
 //     }
 // }
 // console.log(runAllSafe());
+
+
+// const withTimeout = (promise,ms)=>{
+//     return new Promise((resolve,reject)=>{
+//         let timer = setTimeout(()=>{
+//             promise.catch(()=>{});
+//             reject(new Error('Timeout'))
+//     },ms);
+//     promise.then((v)=>{clearTimeout(timer); resolve(v)},(e)=>{clearTimeout(timer); reject(e)});
+// })};
+
+// const a = () => new Promise(res => setTimeout(() => res('A'), 200));
+// const b = () => new Promise(res => setTimeout(() => res('B'), 100));
+
+// async function fastest(){
+//     try{
+//         console.time('first');
+//         let winner = await Promise.race([withTimeout(a(),300), withTimeout(b(),300)]);
+//         console.timeEnd('first');
+//         return winner
+//     }
+//     catch(e){
+//         throw e
+//     }
+// }
+// fastest().then(console.log).catch(console.error);
